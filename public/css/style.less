@@ -1,0 +1,1810 @@
+@accentColor: #b22913;
+@secondaryColor: #007050;
+
+@accentColorBooks: #0090de;
+@accentColorMusic: #007050;
+
+@borderMain: 1px solid #efefef;
+
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Maven Pro Regular'), local('MavenProRegular'), url(/css/fonts/MG9KbUZFchDs94Tbv9U-pT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Share Tech';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Share Tech'), local('ShareTech-Regular'), url(/css/fonts/sharetech.woff) format('woff');
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+.clearfix {
+	clear: both;
+	float: none;
+}
+ul {
+	list-style: none;
+}
+
+html, body {
+	height: 100%;
+	font-family: 'Maven Pro';
+	font-size: 14px;
+}
+
+body {
+	width: 100%;
+	//position: relative;
+	min-width: 980px;
+	transition: margin-left 300ms ease-in-out;
+	//box-shadow: 0 0 6px 2px #222;
+	&.modal-open {
+		overflow: hidden;
+	}
+	&.menu-open {
+		margin-left: -250px;
+		overflow: hidden;
+		.to-top {
+			left: -250px!important;
+		}
+	}
+	//overflow-x: hidden;
+	.wrapper {
+		position: relative;
+		z-index: 5;
+		min-height: 100%;
+		background: #f0f3f7;
+		.strip {
+			background: @secondaryColor;
+			&.hovered {
+				background: @secondaryColor + #111;
+			}
+			.strip-container {
+				width: 960px;
+				margin: 0 auto;
+				text-align: center;
+				color: #fff;
+				font-size: 12px;
+				text-transform: uppercase;
+				padding: 5px 0 6px;
+				cursor: pointer;
+				i {
+					font-size: 14px;
+				}
+				.closer {
+					float: right;
+					color: #eee;
+					text-transform: uppercase;
+					&:hover {
+						color: #fff;
+					}
+					span {
+						font-size: 13px;
+					}
+				}
+			}
+		}
+		.header {
+			.tour {
+				position: absolute;
+				&.step {
+					z-index: 100;
+					background: #fff;
+					border: 1px solid #ccc;
+					width: 180px;
+					padding: 7px 10px;
+					box-shadow: 0 0 3px 0 rgba(0, 0, 0, .14);
+					.inner {
+						position: relative;
+						overflow: visible;
+						.c {
+							text-transform: uppercase;
+							font-size: 13px;
+							margin-bottom: 5px;
+						}
+						.d {
+							font-size: 13px;
+							color: #444;
+							margin-bottom: 5px; 
+						}
+						a {
+							font-size: 13px;
+							text-transform: uppercase;
+							text-decoration: none;
+							display: block;
+							float: left;
+							&.next {
+								color: @accentColor;
+								margin-right: 10px;
+							}
+							&.close {
+								color: #666;
+							}
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+						.t {
+							position: absolute;
+							&.i {
+								border-bottom: 8px solid #fff;
+								border-top: 8px solid transparent;
+								border-left: 8px solid transparent;
+								border-right: 8px solid transparent;
+								z-index: 102;
+							}
+							&.o {
+								border-bottom: 9px solid #ccc;
+								border-top: 9px solid transparent;
+								border-left: 9px solid transparent;
+								border-right: 9px solid transparent;
+								z-index: 101;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.depts {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+		right: 0;
+		width: 200px;
+		padding: 0 25px;
+		background: #f4f4f4;
+		box-shadow: inset 8px 0px 13px -13px #222;//, inset 1px -4px 9px -6px #222;
+		//border-right: 3px solid #222;
+		//z-index: 40;
+		.c {
+			color: #000;
+			font-size: 19px;
+			text-transform: uppercase;
+			font-family: 'Share Tech';
+			margin: 25px 0 18px 0;
+			text-align: center;
+		}
+		ul {
+			margin-bottom: 35px;
+			li {
+				margin-bottom: 8px;
+				text-align: center;
+				a {
+					text-decoration: none;
+					color: #222;
+					font-family: 'Share Tech';
+					font-size: 13px;
+					text-transform: uppercase;
+					&:hover {
+						color: @accentColor;
+					}
+					&.g:hover {
+						color: @accentColor;
+					}
+					&.b:hover {
+						//color: @accentColorBooks;
+					}
+					&.m:hover {
+						//color: @accentColorMusic;
+					}
+				}
+			}
+		}
+		.ftr {
+			position: absolute;
+			text-align: center;
+			width: 200px;
+			bottom: 20px;
+			left: 25px;
+			font-size: 13px;
+			color: #bbb;
+			font-family: 'Share Tech';
+			.title {
+				color: #444;
+				display: block;
+			}
+			a {
+				color: #666;
+				text-decoration: none;
+				font-size: 12px;
+				&:hover {
+					color: @accentColor;
+				}
+			}
+		}
+	}
+}
+
+body.books {
+	.wrapper {
+		.header {
+			.tour {
+				&.step {
+					.inner {
+						a {
+							&.next {
+								color: @accentColorBooks;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+body.music{
+	.wrapper {
+		.header {
+			.tour {
+				&.step {
+					.inner {
+						a {
+							&.next {
+								color: @accentColorMusic;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer-container {
+	margin-top: -40px;
+	background: #fff;
+	border-top: 1px solid #ccc;
+	z-index: 6;
+}
+.footer-placeholder, .footer-container {
+	height: 40px;
+}
+.header-container, .header-container .header {
+	height: 85px;
+}
+.header-container {
+	width: 100%;
+	background: #fff;
+	border-bottom: @borderMain;
+}
+body {
+	.header-container > .header, .content-container > .content, .footer-container > .footer, .controls-container > .controls, .filters-container > .filter, .filters-container > .selected {
+		width: 1060px;
+		margin: 0 auto;
+	}
+}
+body.s {
+	.header-container > .header, .content-container > .content, .footer-container > .footer, .dropdowns-container > .dropdowns, .filters-container > .filter, .filters-container > .selected {
+		width: 870px;
+		margin: 0 auto;
+	}
+}
+.footer-container > .footer {
+	padding: 12px 0 0 0;
+	font-size: 12px;
+	color: #666;
+}
+.footer-container > .footer .left {
+	display: block;
+	float: left;
+	margin-right: 70px;
+}
+.footer-container > .footer a {
+	display: block;
+	float: left;
+	text-decoration: none;
+	color: #666;
+	margin-right: 20px;
+}
+.footer-container > .footer a:hover {
+	color: @accentColor;
+}
+.footer-container > .footer .bc {
+	float: right;
+	width: 167px;
+	height: 18px;
+	opacity: .7;
+	background: url(/img/bc.png);
+}
+.header-container {
+	.header {
+		position: relative;
+		.logo {
+			position: absolute;
+			top: 4px;
+			left: -5px;
+			width: 300px;
+			height: 80px;
+			cursor: pointer;
+			background: url(/img/l5.png) no-repeat;
+		}
+		.cats, .filters {
+			position: absolute;
+			left: 120px;
+			ul {
+				padding-left: 20px;
+				overflow: visible;
+				li {
+					float: left;
+					margin-right: 20px;
+					font-size: 13px;
+					height: 20px;
+					&.sep {
+						width: 16px;
+					}
+					a {
+						text-decoration: none;
+						color: #888;
+						&:hover {
+							color: #000;
+						}
+					}
+					&.active a {
+						color: #000;
+					}
+				}
+			}
+		}
+		.cats {
+			top: 40px;
+			border-bottom: 1px solid #bbb;
+			height: 20px;
+			overflow: visible;
+			.active {
+				border-bottom: 1px solid #000;
+			}
+		}
+		.filters {
+			top: 65px;
+			.icon-caret-up {
+				display: none;
+			}
+			li.active {
+				.icon-caret-up {
+					display: inline;
+				}
+				.icon-caret-down {
+					display: none;
+				}
+			}
+		}
+		.tools {
+			position: absolute;
+			//top: 45px;
+			top: 0;
+			right: 0;
+			ul {
+				li {
+					float: right;
+					a {
+						text-decoration: none;
+						color: #444;
+						display: block;
+						padding: 16px 16px 0;
+						border-top: 3px solid transparent;
+						width: 115px;
+						height: 68px;
+						&:hover {
+							color: @accentColor;
+						}
+						i {
+							float: left;
+							//font-size: 28px;
+						}
+						.t {
+							font-family: 'Share Tech';
+							display: block;
+							margin: 0 0 5px 20px;
+						}
+						.d {
+							margin-left: 20px;
+							display: block;
+							font-size: 12px;
+							//display: none;
+						}
+					}
+					&.active {
+						a {
+							//background: @accentColor;
+							//color: #fff;
+							border-color: @accentColor;
+							color: @accentColor;
+						}
+					}
+				}
+			}
+		}
+		>.tooltip {
+			position: absolute;
+			top: 86px;
+			font-size: 12px;
+			color: #444;
+			text-align: center;
+			&.l {
+				right: 81px;
+				width: 120px;
+			}
+			&.r {
+				right: 0;
+				width: 66px;
+			}
+		}
+		.toggle-depts {
+			position: absolute;
+			top: 43px;
+			left: -70px;
+			color: #909497;
+			font-size: 14px;
+			a {
+				text-decoration: none;
+				color: #aaa;
+				display: block;
+				border: 1px solid #e2e2e2;
+				padding: 2px 5px 1px;
+				&:hover, &.active {
+					color: #000;
+				}
+			}
+		}
+	}
+}
+
+body.s {
+	.header-container {
+		.cats, .filters {
+			left: 100px;
+		}
+	}
+}
+
+body.books {
+	.header-container .header {
+		.logo {
+			background-image: url(/img/lb.png);
+		}
+		.tools li a.active {
+			background: @accentColorBooks;
+		}
+	}
+}
+body.music {
+	.header-container .header {
+		.logo {
+			background-image: url(/img/lm.png);
+		}
+		.tools li a.active {
+			background: @accentColorMusic;
+		}
+	}
+}
+
+
+
+.controls-container {
+	//display: none;
+	background: #fff;
+	border-bottom: 1px solid #ccc;
+	.controls {
+		padding-bottom: 10px;
+		.caption {
+			color: #000;
+			font-family: 'Share Tech';
+			font-size: 22px;
+			margin-bottom: 8px;
+			padding-top: 16px;
+		}
+		.description {
+			color: #444;
+			font-size: 13px;
+			margin-bottom: 16px;
+		}
+		.reset {
+			color: @accentColor;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		&.tagged {
+			.filters {
+				//padding-left: 20px;
+				font-family: 'Share Tech';
+				font-family: 15px;
+				//font-variant: small-caps;
+				li {
+					position: relative;
+					float: left;
+					margin-right: 20px;
+					height: 20px;
+					padding: 5px 0 4px;
+					&.sep {
+						width: 16px;
+					}
+					a {
+						text-decoration: none;
+						color: #888;
+						&:hover {
+							color: #000;
+						}
+						.c {
+							text-transform: uppercase;
+						}
+					}
+					.d {
+						display: none;
+						position: absolute;
+						top: 23px;
+						width: 500px;
+						color: @accentColor;
+					}
+					&.active {
+						a {
+							color: @accentColor;
+						}
+						.d {
+							display: block;
+						}
+					}
+				}
+			}
+			.icon-caret-up {
+				display: none;
+			}
+			li.active {
+				.icon-caret-up {
+					display: inline;
+				}
+				.icon-caret-down {
+					display: none;
+				}
+			}
+			.filter {
+				margin: 0 auto;
+				height: 0;
+				overflow: hidden;
+				&.open {
+					height: auto;
+					padding: 24px 0 0;
+				}
+				a.closer {
+					display: block;
+					float: right;
+					font-size: 14px;
+					color: #f2f2f2;
+					text-decoration: none;
+					padding-top: 5px;
+					&:hover {
+						color: #fff;
+					}
+				}
+				.caption {
+					color: #000;
+					font-family: 'Share Tech';
+					font-size: 22px;
+					margin-bottom: 8px;
+				}
+				.description {
+					color: #444;
+					font-size: 13px;
+					margin-bottom: 16px;
+				}
+				.content {
+					.option {
+						display: block;
+						float: left;
+						margin: 0 12px 12px 0;
+						color: #444;
+						font-family: 'Share Tech';
+						font-size: 13px;
+						text-decoration: none;
+						//background: #777;
+						padding: 3px 10px;
+						height: 16px;
+						//border-radius: 4px;
+						border: 1px dashed #aaa;
+						&.active, &:hover {
+							background: @accentColor;
+							border-color: @accentColor;
+							color: #fff;
+						}
+					}
+				}
+			}
+			.selected {
+				margin: 0 auto;
+				padding: 16px 0 0;
+				margin-top: 4px;
+				border-top: 1px solid #efefef;
+				.option:hover {
+					background: @accentColor;
+				}
+				.content {
+					margin-left: 120px;
+				}
+				.caption {
+					float: left;
+					font-family: 'Share Tech';
+					color: #000;
+					text-transform: uppercase;
+					font-size: 14px;
+					padding: 2px 0 2px;
+					width: 120px;
+				}
+				.option {
+					display: block;
+					float: left;
+					margin-right: 8px;
+					margin-bottom: 8px;
+					color: #fff;
+					font-family: 'Share Tech';
+					font-size: 13px;
+					text-decoration: none;
+					background: #666;
+					padding: 1px 10px;
+					height: 16px;
+					span {
+						display: inline-block;
+						padding-left: 4px;
+						margin-left: 4px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+body.books {
+	.filters-container > .filter > .content > .option:hover, .filters-container > .filter > .content > .option.active, .filters-container > .selected .option:hover {
+		background: @accentColorBooks;
+	}
+}
+body.music {
+	.filters-container > .filter > .content > .option:hover, .filters-container > .filter > .content > .option.active, .filters-container > .selected .option:hover {
+		background: @accentColorMusic;
+	}
+}
+
+.filters-container .filtersearch .label, .filters-container .filtersearch input {
+	float: left;
+}
+.filters-container .filtersearch input {
+	border: none;
+	font-size: 12px;
+	padding: 3px 8px;
+	margin-bottom: 13px;
+	color: #444;
+	outline: none;
+	width: 350px;
+	box-shadow: inset 0 0 10px -5px #000;
+}
+.filters-container .filtersearch .label {
+	margin-top: 2px;
+	margin-right: 2px;
+}
+
+
+
+
+
+.content-container {
+	margin: 20px 0;
+	.card {
+		width: 248px;
+		overflow: hidden;
+		float: left;
+		margin: 0 20px 20px 0;
+		border: 1px solid #ccc;
+		border-bottom-width: 3px;
+		background: #fff;
+		//box-shadow:  0 0 12px -8px #666;
+		position: relative;
+		overflow: visible;
+		&.last {
+			margin-right: 0;
+		}
+		&.discounted {
+			border-bottom-color: @accentColor;
+		}
+		.discounted {
+			display: none;
+			position: absolute;
+			background: url(/img/sl.png);
+			width: 80px;
+			height: 80px;
+			top: -1px;
+			right: -1px;
+			z-index: 20;
+		}
+		.buy, .os {
+			display: none;
+		}
+		.overlay {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 248px;
+			height: 250px;
+			background: rgba(255,255,255,.9);
+			z-index: 10;
+			.inner {
+				position: relative;
+				height: inherit;
+				a {
+					position: absolute;
+					display: block;
+					top: 132px;
+					min-width: 50px;
+					min-height: 50px;
+					text-align: center;
+					color: #666;
+					font-size: 13px;
+					i {
+						font-size: 28px;
+						display: block;
+					}
+				}
+				.zoomer {
+					cursor: pointer;
+					left: 100px;
+				}
+				.caption {
+					position: absolute;
+					top: 20px;
+					left: 0px;
+					width: 190px;
+					padding: 30px;
+					text-align: center;
+					color: #222;
+					text-transform: uppercase;
+					font-size: 16px;
+					font-family: 'Share Tech', sans-serif;
+				}
+				&.rs {
+					a {
+						cursor: pointer;
+					}
+					.zoomer {
+						left: 30px;
+					}
+					.tu {
+						left: 120px;
+					}
+					.td {
+						left: 170px;
+					}
+				}
+			}
+		}
+		&.hover {
+			.overlay {
+				display: block;
+			}
+			.discounted {
+				display: block;
+			}
+		}
+		.image {
+			width: 170px;
+			height: 170px;
+			margin: 30px auto 50px;
+			div {
+				width: 170px;
+				height: 170px;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: contain;
+			}
+		}
+		.info {
+			position: absolute;
+			z-index: 20;
+			bottom: 0;
+			left: 0;
+			border-top: 1px dotted #e2e2e2;
+			width: 100%;
+			li {
+				float: left;
+				padding: 5px 0 6px;
+				min-width: 90px;
+				span {
+					color: #666;
+					&.key {
+						//font-family: 'Tech Share';
+						font-size: 11px;
+						text-transform: uppercase;
+						padding: 0 0 0 4px;
+					}
+					&.value {
+						font-size: 14px;
+						padding: 0 0 0 20px;
+					}
+				}
+				&.fav {
+					min-width: 0;
+					float: right;
+					padding: 5px 20px 4px 0;
+					a {
+						color: #999;
+						text-decoration: none;
+						&:hover {
+							color: #333;
+						}
+						&.active {
+							color: #db8;
+						}
+					}
+				}
+			}
+			
+		}
+		
+		&.promo {
+			width: 788px;
+			height: 524px;
+			.overlay {
+				display: block;
+				left: 330px;
+				top: 70px;
+			}
+			.image {
+				margin: 70px 0 0 40px;
+				width: 300px;
+				height: 300px;
+				div {
+					width: 300px;
+					height: 300px;
+				}
+			}
+		}
+	}
+}
+
+
+
+body.s {
+	.card {
+		width: 268px;
+		margin: 0 30px 30px 0;
+		.discounted {
+			top: -1px;
+			right: -1px;
+		}
+		.overlay {
+			width: 268px;
+			height: 270px;
+			.inner {
+				a {
+					top: 156px;
+				}
+				.zoomer {
+					left: 113px;
+				}
+				.caption {
+					top: 40px;
+					width: 210px;
+					padding: 30px;
+					font-size: 16px;
+				}
+				&.rs {
+					.zoomer {
+						left: 40px;
+					}
+					.tu {
+						left: 130px;
+					}
+					.td {
+						left: 180px;
+					}
+				}
+			}
+		}
+		.image {
+			width: 190px;
+			height: 190px;
+			margin: 40px auto;
+			div {
+				width: 190px;
+				height: 190px;
+			}
+		}
+		.info {
+			li {
+				//padding: 0 10px;
+			}
+		}
+	}
+}
+
+
+body.books {
+	.card {
+		width: 194px;
+		height: 318px;
+		margin: 0 20px 20px 0;
+		&.discounted {
+			border-bottom-color: @accentColorBooks;
+		}
+		&.promo {
+			width: 626px;
+			height: 660px;
+		}
+		.discounted {
+			background: url(/img/slb.png);
+		}
+		.overlay {
+			width: 194px;
+			height: 294px;
+			.inner {
+				a {
+					top: 182px;
+					min-width: 50px;
+					min-height: 50px;
+				}
+				.zoomer {
+					left: 73px;
+				}
+				.caption {
+					top: 50px;
+					left: 0px;
+					width: 164px;
+					padding: 15px;
+				}
+				&.rs {
+					.zoomer {
+						left: 10px;
+					}
+					.tu {
+						left: 88px;
+					}
+					.td {
+						left: 135px;
+					}
+				}
+			}
+		}
+		.image {
+			width: 194px;
+			height: 294px;
+			margin: 0 0 50px;
+			div {
+				width: 194px;
+				height: 298px;
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: auto;
+			}
+		}
+		.info {
+			background: #fff;
+			li {
+				padding: 5px 0 6px;
+				min-width: 80px;
+				span {
+					&.key {
+						font-size: 11px;
+						text-transform: uppercase;
+						padding: 0 0 0 4px;
+					}
+					&.value {
+						font-size: 14px;
+						padding: 0 0 0 10px;
+					}
+				}
+				&.fav {
+					min-width: 0;
+					float: right;
+					padding: 5px 10px 4px 0;
+					a {
+						color: #999;
+						text-decoration: none;
+						&:hover {
+							color: #333;
+						}
+						&.active {
+							color: #db8;
+						}
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+body.music {
+	.card {
+		width: 194px;
+		height: 260px;
+		&.discounted {
+			border-bottom-color: @accentColorMusic;
+		}
+		.discounted {
+			background: url(/img/slm.png);
+		}
+		.overlay {
+			width: 194px;
+			height: 194px;
+			.inner {
+				a {
+					top: 82px;
+					min-width: 50px;
+					min-height: 50px;
+				}
+				.zoomer {
+					left: 73px;
+				}
+				.caption {
+					display: none;
+				}
+				&.rs {
+					.zoomer {
+						left: 10px;
+					}
+					.tu {
+						left: 88px;
+					}
+					.td {
+						left: 135px;
+					}
+				}
+			}
+		}
+		&.hover {
+			.overlay {
+				display: block;
+			}
+			.discounted {
+				display: block;
+			}
+		}
+		.image {
+			width: 194px;
+			height: 194px;
+			margin: 0;
+			div {
+				width: 194px;
+				height: 194px;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: contain;
+			}
+		}
+		.title {
+			font-family: 'Share Tech';
+			color: #888;
+			padding: 10px 10px;
+			font-size: 12px;
+			.caption {
+				display: block;
+				color: #222;
+				font-size: 13px;
+				text-transform: uppercase;
+			}
+			.author {
+				color: #444;
+			}
+		}
+		.info {
+			display: none;
+		}
+		
+		&.promo {
+			width: 788px;
+			height: 524px;
+			.overlay {
+				display: block;
+				left: 330px;
+				top: 70px;
+			}
+			.image {
+				margin: 70px 0 0 40px;
+				width: 300px;
+				height: 300px;
+				div {
+					width: 300px;
+					height: 300px;
+				}
+			}
+		}
+	}
+}
+
+body.s.books {
+	.card {
+		margin: 0 27px 27px 0;
+	}
+}
+
+body.general {
+	&.m {
+		.card.c3 {
+			margin-right: 20px;
+		}
+		.card.c4 {
+			margin-right: 0px!important;
+		}
+	}
+	&.s {
+		.card.c3 {
+			margin-right: 0px!important;
+		}
+		.card.c4 {
+			margin-right: 27px;
+		}
+	}
+}
+
+body.books, body.music {
+	&.m {
+		.card.c4 {
+			margin-right: 20px;
+		}
+		.card.c5 {
+			margin-right: 0px!important;
+		}
+	}
+	&.s {
+		.card.c4 {
+			margin-right: 0px!important;
+		}
+		.card.c5 {
+			margin-right: 30px;
+		}
+	}
+}
+
+
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(255,255,255,.8);
+	z-index: 1000;
+	.db {
+		position: relative;
+		padding-bottom: 60px;
+	}
+	overflow-y: scroll;
+	//margin-bottom: 60px;
+}
+.modal-container {
+	z-index: 1010;
+	position: absolute;
+	background: #fff;
+	top: 60px;
+	width: 900px;
+	overflow-y: auto;
+	box-shadow: 0 0 26px -6px #666;
+	.modal {
+		position: relative;
+		background: #f0f3f7;
+		.modal-header {
+			position: relative;
+			background: @accentColor;
+			//text-align: center;
+			font-family: 'Share Tech';
+			color: #fff;
+			font-size: 24px;
+			padding: 14px 160px 12px 10px;
+			a {
+				position: absolute;
+				top: 15px;
+				right: 20px;
+				color: #fff;
+				text-decoration: none;
+				cursor: pointer;
+				&:hover {
+					text-decoration: none;
+					color: #ddd;
+				}
+			}
+		}
+		.modal-body {
+			padding: 0 0 10px;
+			position: relative;
+			.item-wrapper {
+				position: relative;
+				.item-info {
+					display: table;
+					border-spacing: 10px;
+					.row {
+						display: table-row;
+						.image-container {
+							display: table-cell;
+							vertical-align: top;
+							.image {
+								width: 300px;
+								height: 300px;
+								background-position: center center;
+								background-size: contain;
+								background-color: #fff;
+								background-repeat: no-repeat;
+								border: 1px solid #ccc;
+							}
+						}
+						.overview {
+							vertical-align: top;
+							display: table-cell;
+							background: #fff;
+							border: 1px solid #ccc;
+							padding: 10px;
+							width: 406px;
+							p {
+								margin-bottom: 8px;
+								display: block;
+								font-size: 13px;
+							}
+							h3 {
+								font-size: 16px;
+								color: @accentColor;
+								font-weight: normal;
+								text-transform: uppercase;
+								margin: 0 0 8px;
+							}
+							p + h3 {
+								margin-bottom: 12px;
+							}
+						}
+						.params {
+							vertical-align: top;
+							display: table-cell;
+							background: #fff;
+							border: 1px solid #ccc;
+							padding: 10px;
+							width: 121px;
+							margin-left: 30px;
+							text-align: right;
+							.key {
+								text-transform: uppercase;
+								color: #666;
+								font-size: 12px;
+							}
+							.value {
+								font-size: 12px;
+								margin-bottom: 18px;
+								&.price {
+									margin-bottom: 0px;
+								}
+								a {
+									text-decoration: none;
+									border-bottom: 1px dotted #222;
+									color: #333;
+									&:hover {
+										border-bottom: 1px solid #222;
+									}
+								}
+							}
+							.ph {
+								height: 38px;
+							}
+						}
+					}
+				}
+			}
+			.similar {
+				margin: 0 10px;
+				a {
+					font-family: 'Share Tech', sans-serif;
+					display: block;
+					position: relative;
+					width: 66px;
+					height: 56px;
+					padding-top: 10px;
+					text-align: center;
+					cursor: pointer;
+					span {
+						display: block;
+						font-size: 15px;
+						text-transform: uppercase;
+					}
+					>.ol {
+						position: absolute;
+						top: 0;
+						left: 0;
+						padding-top: 10px;
+						width: inherit;
+						height: inherit;
+						display: none;
+						background: rgba(255,255,255,.8);
+					}
+					&:hover {
+						>.ol {
+							display: block;
+						}
+					}
+				}
+				.si {
+					background: #fff;
+					border: 1px solid #ccc;
+					margin-right: 10px;
+					float: left;
+					background-size: contain;
+					background-position: center center;
+					background-repeat: no-repeat;
+				}
+				.d {
+					float: left;
+					text-transform: uppercase;
+					color: #666;
+					width: 150px;
+					margin: 15px 0 0 10px;
+				}
+				.buy {
+					float: right;
+					background: @accentColor;
+					color: #fff;
+					text-decoration: none;
+					&:hover {
+						background: @accentColor + #181818;
+					}
+					span {
+						display: block;
+						font-size: 15px;
+						text-transform: uppercase;
+					}
+				}
+				
+				.fbs {
+					float: right;
+					text-align: center;
+					margin-right: 10px;
+					background: #3b5998;
+					color: #fff;
+					text-decoration: none;
+					&:hover {
+						background: #3b5998 + #181818;
+					}
+					span {
+						display: block;
+						font-size: 15px;
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+body.books {
+	.modal-container {
+		.modal {
+			.modal-header {
+				background: @accentColorBooks;
+			}
+			.modal-body {
+				.item-wrapper {
+					.item-info {
+						.row {
+							.overview {
+								h3 {
+									color: @accentColorBooks;
+								}
+							}
+						}
+					}
+				}
+				.similar {
+					.buy {
+						background: @accentColorBooks;
+						color: #fff;
+						&:hover {
+							background: @accentColorBooks + #181818;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+body.music {
+	.modal-container {
+		width: 840px;
+		.modal {
+			.modal-header {
+				display: none;
+				background: @accentColorMusic;
+			}
+			.modal-body {
+				padding: 0;
+				.item-wrapper {
+					.item-info {
+						border-spacing: 0;
+						.row {
+							.image-container {
+								.image {
+									border: none;
+								}
+							}
+							.overview {
+								width: 520px;
+								border: none;
+								margin: 20px;
+								position: relative;
+								h3 {
+									color: @accentColorMusic;
+								}
+								.title {
+									font-family: 'Share Tech';
+									font-size: 24px;
+								}
+								.author {
+									font-family: 'Share Tech';
+									color: #666;
+									span {
+										font-size: 18px;
+										color: #333;
+									}
+								}
+								.player {
+									margin: 10px 0;
+									a {
+										display: block;
+										float: left;
+										color: #fff;
+										text-decoration: none;
+										text-transform: uppercase;
+										font-family: 'Share Tech';
+										font-size: 15px;
+										height: 40px;
+										padding-top: 10px;
+										padding-right: 10px;
+										margin-right: 10px;
+										&.play {
+											background: @accentColorMusic;
+											&:hover {
+												background: @accentColorMusic + #181818;
+											}
+										}
+										&.buy {
+											background: #000;
+											&:hover {
+												background: #333;
+											}
+										}
+										&.fbs {
+											background: #3b5998;
+											&:hover {
+												background: #3b5998 + #181818;
+											}
+										}
+										i {
+											display: block;
+											float: left;
+											margin-left: 10px;
+										}
+										span {
+											margin-left: 40px;
+											display: block;
+										}
+									}
+								}
+								.legal {
+									font-size: 12px;
+									color: #888;
+									font-style: italic;
+								}
+							}
+						}
+					}
+				}
+				.similar {
+					margin: 10px 0 0 0;
+					.si {
+						border: none;
+						margin-right: 12px;
+					}
+					.buy {
+						background: @accentColorBooks;
+						color: #fff;
+						&:hover {
+							background: @accentColorBooks + #181818;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.content-container .content .empty {
+	text-align: center;
+	color: #444;
+	margin: 100px auto;
+	font-size: 18px;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.content-container .content .loader {
+	display: block;
+	width: 120px;
+	height: 90px;
+	padding-top: 30px;
+	border-radius: 60px;
+	margin: 20px auto 50px;
+	background: #bbb;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+.content-container .content .loader:hover {
+	background: #ccc;
+	/*box-shadow:  0 0 12px -8px #000;*/
+	/*border-color: #aaa;*/
+}
+
+
+
+.content .about {
+	background: #fff;
+	padding: 30px;
+	border: 1px solid #ccc;
+	font-size: 13px;
+	//box-shadow:  0 0 12px -8px #666;
+	h2 {
+		font-size: 20px;
+		color: @accentColor;
+		font-weight: normal;
+		margin-bottom: 12px;
+	}
+	h3 {
+		font-size: 13px;
+		font-weight: normal;
+		text-transform: uppercase;
+		color: #666;
+		margin-bottom: 12px;
+	}
+	p {
+		margin-bottom: 12px;
+	}
+	.quote {
+		font-size: 18px;
+		//color: #666;
+		margin: 18px 0 18px 0;
+		text-shadow: 0 0 1px #fff;
+	}
+	.main {
+		margin-right: 300px;
+	}
+	.stats {
+		float: right;
+		width: 250px;
+		.gc {
+			margin-bottom: 16px;
+			.caption {
+				text-transform: uppercase;
+				font-size: 12px;
+				margin-bottom: 4px;
+			}
+			.content {
+				.sqr {
+					display: block;
+					float: left;
+					width: 8px;
+					height: 8px;
+					margin: 0 2px 2px 0;
+					background-color: @accentColor;
+				}
+			}
+		}
+		.params {
+			margin-top: 40px;
+			.key {
+				font-size: 12px;
+				text-transform: uppercase;
+			}
+			.value {
+				font-size: 12px;
+				a {
+					color: #222;
+					text-decoration: none;
+					border-bottom: 1px dotted #222;
+					&:hover {
+						border-bottom: 1px solid #222;
+					}
+				}
+			}
+		}
+	}
+	.list {
+		list-style: square;
+		margin: 0 0 12px 15px;
+	}
+	.leftpane {
+		float: left;
+		width: 450px;
+		padding-right: 100px;
+		form {
+			margin-top: 30px;
+			.row {
+				margin-bottom: 10px;
+				.label {
+					margin: 0 0 3px 11px;
+					color: #666;
+					font-size: 13px;
+				}
+				input, textarea {
+					border: 1px solid #ccc;
+					font-size: 14px;
+					padding: 4px 10px;
+					color: #333;
+					&:focus {
+						border: 1px solid #888;
+						outline: none;
+					}
+				}
+				input {
+					width: 220px;
+				}
+				textarea {
+					width: 380px;
+				}
+			}
+			.btn {
+				display: inline-block;
+				background: @accentColorMusic;
+				color: #fff;
+				padding: 6px 11px 7px;
+				text-decoration: none;
+				&:hover {
+					background: @accentColorMusic + #181818;
+				}
+			}
+		}
+	}
+	.rightpane {
+		float: left;
+		width: 440px;
+		.client-card {
+			width: 240px;
+			height: 150px;
+			background: url(/img/ce.png);
+			background-size: contain;
+			border-radius: 6px;
+			box-shadow: 0 0 4px 1px rgba(0,0,0,0.34);
+			margin-bottom: 30px;
+		}
+		ul {
+			list-style: square;
+			margin-left: 17px;
+			li {
+				margin-bottom: 8px;
+			}
+		}
+		i {
+			font-size: 14px;
+		}
+	}
+}
+
+body.books .content .about h2 {
+	color: @accentColorBooks;
+}
+body.music .content .about h2 {
+	color: @accentColorMusic;
+}
+
+
+.trackbar {
+	margin-bottom: 8px;
+	.label-left, .label-right {
+		font-family: 'Share Tech';
+		//text-transform: uppercase;
+		color: #444;
+	}
+	.label-left {
+		float: left;
+	}.label-right {
+		float: right;
+	}
+	.track-container {
+		padding-top: 2px;
+		.track {
+			//border: 1px solid #000;
+			height: 2px;
+			margin: 5px 200px 0;
+			position: relative;
+			background: @accentColor;
+			.handler {
+				display: block;
+				position: absolute;
+				left: 49%;
+				top: -7px;
+				width: 16px;
+				height: 16px;
+				background: #ddd;
+				cursor: pointer;
+				box-shadow: 0 0 2px 0 rgba(0, 0, 0, .74);
+				&.active, &:hover {
+					background-color: #fff;
+					.inner .tooltip, .inner .to, .inner .ti {
+						display: block;
+						text-wrap: none;
+					}
+				}
+				.inner {
+					position: relative;
+					.tooltip {
+						position: absolute;
+						bottom: 9px;
+						left: -8px;
+						padding: 4px;
+						background: #f2f2f2;
+						display: none;
+						//border: 1px solid #666;
+						box-shadow: 0 0 3px 0 rgba(0, 0, 0, .74);
+						z-index: 22;
+					}
+					.ti, .to {
+						display: none;
+						position: absolute;
+					}
+					.ti {
+						border-top: 8px solid #f2f2f2;
+						border-bottom: 8px solid transparent;
+						border-left: 8px solid transparent;
+						border-right: 8px solid transparent;
+						z-index: 23;
+						left: 1px;
+						bottom: -6px;
+					}
+					.to {
+						border-top: 9px solid #888;
+						border-bottom: 9px solid transparent;
+						border-left: 9px solid transparent;
+						border-right: 9px solid transparent;
+						z-index: 20;
+						left: 0;
+						bottom: -8px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.to-top {
+	position: fixed;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	background: rgba(255,255,255,.95);
+	//text-transform: uppercase;
+	color: #000;
+	border-bottom: 1px solid #ccc;
+	padding: 8px 0;
+	z-index: 200;
+	transition: left 300ms ease-in-out;
+	a {
+		font-size: 14px;
+		font-family: 'Share Tech';
+		padding: 5px 20px;
+		display: inline-block;
+		&:hover, &.active {
+			color: @accentColor;
+		}
+		i {
+			font-size: 14px;
+		}
+		&:first-child {
+			border-right: 1px solid #888;
+		}
+	}
+}

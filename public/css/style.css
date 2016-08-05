@@ -1,0 +1,1595 @@
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Maven Pro Regular'), local('MavenProRegular'), url(/css/fonts/MG9KbUZFchDs94Tbv9U-pT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Share Tech';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Share Tech'), local('ShareTech-Regular'), url(/css/fonts/sharetech.woff) format('woff');
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.clearfix {
+  clear: both;
+  float: none;
+}
+ul {
+  list-style: none;
+}
+html, body {
+  height: 100%;
+  font-family: 'Maven Pro';
+  font-size: 14px;
+}
+body {
+  width: 100%;
+  min-width: 980px;
+  transition: margin-left 300ms ease-in-out;
+}
+body.modal-open {
+  overflow: hidden;
+}
+body.menu-open {
+  margin-left: -250px;
+  overflow: hidden;
+}
+body.menu-open .to-top {
+  left: -250px !important;
+}
+body .wrapper {
+  position: relative;
+  z-index: 5;
+  min-height: 100%;
+  background: #f0f3f7;
+}
+body .wrapper .strip {
+  background: #007050;
+}
+body .wrapper .strip.hovered {
+  background: #118161;
+}
+body .wrapper .strip .strip-container {
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 5px 0 6px;
+  cursor: pointer;
+}
+body .wrapper .strip .strip-container i {
+  font-size: 14px;
+}
+body .wrapper .strip .strip-container .closer {
+  float: right;
+  color: #eee;
+  text-transform: uppercase;
+}
+body .wrapper .strip .strip-container .closer:hover {
+  color: #fff;
+}
+body .wrapper .strip .strip-container .closer span {
+  font-size: 13px;
+}
+body .wrapper .header .tour {
+  position: absolute;
+}
+body .wrapper .header .tour.step {
+  z-index: 100;
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 180px;
+  padding: 7px 10px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.14);
+}
+body .wrapper .header .tour.step .inner {
+  position: relative;
+  overflow: visible;
+}
+body .wrapper .header .tour.step .inner .c {
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+body .wrapper .header .tour.step .inner .d {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 5px;
+}
+body .wrapper .header .tour.step .inner a {
+  font-size: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  float: left;
+}
+body .wrapper .header .tour.step .inner a.next {
+  color: #b22913;
+  margin-right: 10px;
+}
+body .wrapper .header .tour.step .inner a.close {
+  color: #666;
+}
+body .wrapper .header .tour.step .inner a:hover {
+  text-decoration: underline;
+}
+body .wrapper .header .tour.step .inner .t {
+  position: absolute;
+}
+body .wrapper .header .tour.step .inner .t.i {
+  border-bottom: 8px solid #fff;
+  border-top: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  z-index: 102;
+}
+body .wrapper .header .tour.step .inner .t.o {
+  border-bottom: 9px solid #ccc;
+  border-top: 9px solid transparent;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  z-index: 101;
+}
+body .depts {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  right: 0;
+  width: 200px;
+  padding: 0 25px;
+  background: #f4f4f4;
+  box-shadow: inset 8px 0px 13px -13px #222222;
+}
+body .depts .c {
+  color: #000;
+  font-size: 19px;
+  text-transform: uppercase;
+  font-family: 'Share Tech';
+  margin: 25px 0 18px 0;
+  text-align: center;
+}
+body .depts ul {
+  margin-bottom: 35px;
+}
+body .depts ul li {
+  margin-bottom: 8px;
+  text-align: center;
+}
+body .depts ul li a {
+  text-decoration: none;
+  color: #222;
+  font-family: 'Share Tech';
+  font-size: 13px;
+  text-transform: uppercase;
+}
+body .depts ul li a:hover {
+  color: #b22913;
+}
+body .depts ul li a.g:hover {
+  color: #b22913;
+}
+body .depts .ftr {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  bottom: 20px;
+  left: 25px;
+  font-size: 13px;
+  color: #bbb;
+  font-family: 'Share Tech';
+}
+body .depts .ftr .title {
+  color: #444;
+  display: block;
+}
+body .depts .ftr a {
+  color: #666;
+  text-decoration: none;
+  font-size: 12px;
+}
+body .depts .ftr a:hover {
+  color: #b22913;
+}
+body.books .wrapper .header .tour.step .inner a.next {
+  color: #0090de;
+}
+body.music .wrapper .header .tour.step .inner a.next {
+  color: #007050;
+}
+.footer-container {
+  margin-top: -40px;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  z-index: 6;
+}
+.footer-placeholder, .footer-container {
+  height: 40px;
+}
+.header-container, .header-container .header {
+  height: 85px;
+}
+.header-container {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #efefef;
+}
+body .header-container > .header,
+body .content-container > .content,
+body .footer-container > .footer,
+body .controls-container > .controls,
+body .filters-container > .filter,
+body .filters-container > .selected {
+  width: 1060px;
+  margin: 0 auto;
+}
+body.s .header-container > .header,
+body.s .content-container > .content,
+body.s .footer-container > .footer,
+body.s .dropdowns-container > .dropdowns,
+body.s .filters-container > .filter,
+body.s .filters-container > .selected {
+  width: 870px;
+  margin: 0 auto;
+}
+.footer-container > .footer {
+  padding: 12px 0 0 0;
+  font-size: 12px;
+  color: #666;
+}
+.footer-container > .footer .left {
+  display: block;
+  float: left;
+  margin-right: 70px;
+}
+.footer-container > .footer a {
+  display: block;
+  float: left;
+  text-decoration: none;
+  color: #666;
+  margin-right: 20px;
+}
+.footer-container > .footer a:hover {
+  color: #b22913;
+}
+.footer-container > .footer .bc {
+  float: right;
+  width: 167px;
+  height: 18px;
+  opacity: .7;
+  background: url(/img/bc.png);
+}
+.header-container .header {
+  position: relative;
+}
+.header-container .header .logo {
+  position: absolute;
+  top: 4px;
+  left: -5px;
+  width: 300px;
+  height: 80px;
+  cursor: pointer;
+  background: url(/img/l5.png) no-repeat;
+}
+.header-container .header .cats, .header-container .header .filters {
+  position: absolute;
+  left: 120px;
+}
+.header-container .header .cats ul, .header-container .header .filters ul {
+  padding-left: 20px;
+  overflow: visible;
+}
+.header-container .header .cats ul li, .header-container .header .filters ul li {
+  float: left;
+  margin-right: 20px;
+  font-size: 13px;
+  height: 20px;
+}
+.header-container .header .cats ul li.sep, .header-container .header .filters ul li.sep {
+  width: 16px;
+}
+.header-container .header .cats ul li a, .header-container .header .filters ul li a {
+  text-decoration: none;
+  color: #888;
+}
+.header-container .header .cats ul li a:hover, .header-container .header .filters ul li a:hover {
+  color: #000;
+}
+.header-container .header .cats ul li.active a, .header-container .header .filters ul li.active a {
+  color: #000;
+}
+.header-container .header .cats {
+  top: 40px;
+  border-bottom: 1px solid #bbb;
+  height: 20px;
+  overflow: visible;
+}
+.header-container .header .cats .active {
+  border-bottom: 1px solid #000;
+}
+.header-container .header .filters {
+  top: 65px;
+}
+.header-container .header .filters .icon-caret-up {
+  display: none;
+}
+.header-container .header .filters li.active .icon-caret-up {
+  display: inline;
+}
+.header-container .header .filters li.active .icon-caret-down {
+  display: none;
+}
+.header-container .header .tools {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.header-container .header .tools ul li {
+  float: right;
+}
+.header-container .header .tools ul li a {
+  text-decoration: none;
+  color: #444;
+  display: block;
+  padding: 16px 16px 0;
+  border-top: 3px solid transparent;
+  width: 115px;
+  height: 68px;
+}
+.header-container .header .tools ul li a:hover {
+  color: #b22913;
+}
+.header-container .header .tools ul li a i {
+  float: left;
+}
+.header-container .header .tools ul li a .t {
+  font-family: 'Share Tech';
+  display: block;
+  margin: 0 0 5px 20px;
+}
+.header-container .header .tools ul li a .d {
+  margin-left: 20px;
+  display: block;
+  font-size: 12px;
+}
+.header-container .header .tools ul li.active a {
+  border-color: #b22913;
+  color: #b22913;
+}
+.header-container .header > .tooltip {
+  position: absolute;
+  top: 86px;
+  font-size: 12px;
+  color: #444;
+  text-align: center;
+}
+.header-container .header > .tooltip.l {
+  right: 81px;
+  width: 120px;
+}
+.header-container .header > .tooltip.r {
+  right: 0;
+  width: 66px;
+}
+.header-container .header .toggle-depts {
+  position: absolute;
+  top: 43px;
+  left: -70px;
+  color: #909497;
+  font-size: 14px;
+}
+.header-container .header .toggle-depts a {
+  text-decoration: none;
+  color: #aaa;
+  display: block;
+  border: 1px solid #e2e2e2;
+  padding: 2px 5px 1px;
+}
+.header-container .header .toggle-depts a:hover, .header-container .header .toggle-depts a.active {
+  color: #000;
+}
+body.s .header-container .cats, body.s .header-container .filters {
+  left: 100px;
+}
+body.books .header-container .header .logo {
+  background-image: url(/img/lb.png);
+}
+body.books .header-container .header .tools li a.active {
+  background: #0090de;
+}
+body.music .header-container .header .logo {
+  background-image: url(/img/lm.png);
+}
+body.music .header-container .header .tools li a.active {
+  background: #007050;
+}
+.controls-container {
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+.controls-container .controls {
+  padding-bottom: 10px;
+}
+.controls-container .controls .caption {
+  color: #000;
+  font-family: 'Share Tech';
+  font-size: 22px;
+  margin-bottom: 8px;
+  padding-top: 16px;
+}
+.controls-container .controls .description {
+  color: #444;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.controls-container .controls .reset {
+  color: #b22913;
+  text-decoration: none;
+}
+.controls-container .controls .reset:hover {
+  text-decoration: underline;
+}
+.controls-container .controls.tagged .filters {
+  font-family: 'Share Tech';
+  font-family: 15px;
+}
+.controls-container .controls.tagged .filters li {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  height: 20px;
+  padding: 5px 0 4px;
+}
+.controls-container .controls.tagged .filters li.sep {
+  width: 16px;
+}
+.controls-container .controls.tagged .filters li a {
+  text-decoration: none;
+  color: #888;
+}
+.controls-container .controls.tagged .filters li a:hover {
+  color: #000;
+}
+.controls-container .controls.tagged .filters li a .c {
+  text-transform: uppercase;
+}
+.controls-container .controls.tagged .filters li .d {
+  display: none;
+  position: absolute;
+  top: 23px;
+  width: 500px;
+  color: #b22913;
+}
+.controls-container .controls.tagged .filters li.active a {
+  color: #b22913;
+}
+.controls-container .controls.tagged .filters li.active .d {
+  display: block;
+}
+.controls-container .controls.tagged .icon-caret-up {
+  display: none;
+}
+.controls-container .controls.tagged li.active .icon-caret-up {
+  display: inline;
+}
+.controls-container .controls.tagged li.active .icon-caret-down {
+  display: none;
+}
+.controls-container .controls.tagged .filter {
+  margin: 0 auto;
+  height: 0;
+  overflow: hidden;
+}
+.controls-container .controls.tagged .filter.open {
+  height: auto;
+  padding: 24px 0 0;
+}
+.controls-container .controls.tagged .filter a.closer {
+  display: block;
+  float: right;
+  font-size: 14px;
+  color: #f2f2f2;
+  text-decoration: none;
+  padding-top: 5px;
+}
+.controls-container .controls.tagged .filter a.closer:hover {
+  color: #fff;
+}
+.controls-container .controls.tagged .filter .caption {
+  color: #000;
+  font-family: 'Share Tech';
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.controls-container .controls.tagged .filter .description {
+  color: #444;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.controls-container .controls.tagged .filter .content .option {
+  display: block;
+  float: left;
+  margin: 0 12px 12px 0;
+  color: #444;
+  font-family: 'Share Tech';
+  font-size: 13px;
+  text-decoration: none;
+  padding: 3px 10px;
+  height: 16px;
+  border: 1px dashed #aaa;
+}
+.controls-container .controls.tagged .filter .content .option.active, .controls-container .controls.tagged .filter .content .option:hover {
+  background: #b22913;
+  border-color: #b22913;
+  color: #fff;
+}
+.controls-container .controls.tagged .selected {
+  margin: 0 auto;
+  padding: 16px 0 0;
+  margin-top: 4px;
+  border-top: 1px solid #efefef;
+}
+.controls-container .controls.tagged .selected .option:hover {
+  background: #b22913;
+}
+.controls-container .controls.tagged .selected .content {
+  margin-left: 120px;
+}
+.controls-container .controls.tagged .selected .caption {
+  float: left;
+  font-family: 'Share Tech';
+  color: #000;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 2px 0 2px;
+  width: 120px;
+}
+.controls-container .controls.tagged .selected .option {
+  display: block;
+  float: left;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  color: #fff;
+  font-family: 'Share Tech';
+  font-size: 13px;
+  text-decoration: none;
+  background: #666;
+  padding: 1px 10px;
+  height: 16px;
+}
+.controls-container .controls.tagged .selected .option span {
+  display: inline-block;
+  padding-left: 4px;
+  margin-left: 4px;
+}
+body.books .filters-container > .filter > .content > .option:hover, body.books .filters-container > .filter > .content > .option.active, body.books .filters-container > .selected .option:hover {
+  background: #0090de;
+}
+body.music .filters-container > .filter > .content > .option:hover, body.music .filters-container > .filter > .content > .option.active, body.music .filters-container > .selected .option:hover {
+  background: #007050;
+}
+.filters-container .filtersearch .label, .filters-container .filtersearch input {
+  float: left;
+}
+.filters-container .filtersearch input {
+  border: none;
+  font-size: 12px;
+  padding: 3px 8px;
+  margin-bottom: 13px;
+  color: #444;
+  outline: none;
+  width: 350px;
+  box-shadow: inset 0 0 10px -5px #000000;
+}
+.filters-container .filtersearch .label {
+  margin-top: 2px;
+  margin-right: 2px;
+}
+.content-container {
+  margin: 20px 0;
+}
+.content-container .card {
+  width: 248px;
+  overflow: hidden;
+  float: left;
+  margin: 0 20px 20px 0;
+  border: 1px solid #ccc;
+  border-bottom-width: 3px;
+  background: #fff;
+  position: relative;
+  overflow: visible;
+}
+.content-container .card.last {
+  margin-right: 0;
+}
+.content-container .card.discounted {
+  border-bottom-color: #b22913;
+}
+.content-container .card .discounted {
+  display: none;
+  position: absolute;
+  background: url(/img/sl.png);
+  width: 80px;
+  height: 80px;
+  top: -1px;
+  right: -1px;
+  z-index: 20;
+}
+.content-container .card .buy, .content-container .card .os {
+  display: none;
+}
+.content-container .card .overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 248px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 10;
+}
+.content-container .card .overlay .inner {
+  position: relative;
+  height: inherit;
+}
+.content-container .card .overlay .inner a {
+  position: absolute;
+  display: block;
+  top: 132px;
+  min-width: 50px;
+  min-height: 50px;
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+}
+.content-container .card .overlay .inner a i {
+  font-size: 28px;
+  display: block;
+}
+.content-container .card .overlay .inner .zoomer {
+  cursor: pointer;
+  left: 100px;
+}
+.content-container .card .overlay .inner .caption {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  width: 190px;
+  padding: 30px;
+  text-align: center;
+  color: #222;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: 'Share Tech', sans-serif;
+}
+.content-container .card .overlay .inner.rs a {
+  cursor: pointer;
+}
+.content-container .card .overlay .inner.rs .zoomer {
+  left: 30px;
+}
+.content-container .card .overlay .inner.rs .tu {
+  left: 120px;
+}
+.content-container .card .overlay .inner.rs .td {
+  left: 170px;
+}
+.content-container .card.hover .overlay {
+  display: block;
+}
+.content-container .card.hover .discounted {
+  display: block;
+}
+.content-container .card .image {
+  width: 170px;
+  height: 170px;
+  margin: 30px auto 50px;
+}
+.content-container .card .image div {
+  width: 170px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.content-container .card .info {
+  position: absolute;
+  z-index: 20;
+  bottom: 0;
+  left: 0;
+  border-top: 1px dotted #e2e2e2;
+  width: 100%;
+}
+.content-container .card .info li {
+  float: left;
+  padding: 5px 0 6px;
+  min-width: 90px;
+}
+.content-container .card .info li span {
+  color: #666;
+}
+.content-container .card .info li span.key {
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 0 0 0 4px;
+}
+.content-container .card .info li span.value {
+  font-size: 14px;
+  padding: 0 0 0 20px;
+}
+.content-container .card .info li.fav {
+  min-width: 0;
+  float: right;
+  padding: 5px 20px 4px 0;
+}
+.content-container .card .info li.fav a {
+  color: #999;
+  text-decoration: none;
+}
+.content-container .card .info li.fav a:hover {
+  color: #333;
+}
+.content-container .card .info li.fav a.active {
+  color: #db8;
+}
+.content-container .card.promo {
+  width: 788px;
+  height: 524px;
+}
+.content-container .card.promo .overlay {
+  display: block;
+  left: 330px;
+  top: 70px;
+}
+.content-container .card.promo .image {
+  margin: 70px 0 0 40px;
+  width: 300px;
+  height: 300px;
+}
+.content-container .card.promo .image div {
+  width: 300px;
+  height: 300px;
+}
+body.s .card {
+  width: 268px;
+  margin: 0 30px 30px 0;
+}
+body.s .card .discounted {
+  top: -1px;
+  right: -1px;
+}
+body.s .card .overlay {
+  width: 268px;
+  height: 270px;
+}
+body.s .card .overlay .inner a {
+  top: 156px;
+}
+body.s .card .overlay .inner .zoomer {
+  left: 113px;
+}
+body.s .card .overlay .inner .caption {
+  top: 40px;
+  width: 210px;
+  padding: 30px;
+  font-size: 16px;
+}
+body.s .card .overlay .inner.rs .zoomer {
+  left: 40px;
+}
+body.s .card .overlay .inner.rs .tu {
+  left: 130px;
+}
+body.s .card .overlay .inner.rs .td {
+  left: 180px;
+}
+body.s .card .image {
+  width: 190px;
+  height: 190px;
+  margin: 40px auto;
+}
+body.s .card .image div {
+  width: 190px;
+  height: 190px;
+}
+body.books .card {
+  width: 194px;
+  height: 318px;
+  margin: 0 20px 20px 0;
+}
+body.books .card.discounted {
+  border-bottom-color: #0090de;
+}
+body.books .card.promo {
+  width: 626px;
+  height: 660px;
+}
+body.books .card .discounted {
+  background: url(/img/slb.png);
+}
+body.books .card .overlay {
+  width: 194px;
+  height: 294px;
+}
+body.books .card .overlay .inner a {
+  top: 182px;
+  min-width: 50px;
+  min-height: 50px;
+}
+body.books .card .overlay .inner .zoomer {
+  left: 73px;
+}
+body.books .card .overlay .inner .caption {
+  top: 50px;
+  left: 0px;
+  width: 164px;
+  padding: 15px;
+}
+body.books .card .overlay .inner.rs .zoomer {
+  left: 10px;
+}
+body.books .card .overlay .inner.rs .tu {
+  left: 88px;
+}
+body.books .card .overlay .inner.rs .td {
+  left: 135px;
+}
+body.books .card .image {
+  width: 194px;
+  height: 294px;
+  margin: 0 0 50px;
+}
+body.books .card .image div {
+  width: 194px;
+  height: 298px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: auto;
+}
+body.books .card .info {
+  background: #fff;
+}
+body.books .card .info li {
+  padding: 5px 0 6px;
+  min-width: 80px;
+}
+body.books .card .info li span.key {
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 0 0 0 4px;
+}
+body.books .card .info li span.value {
+  font-size: 14px;
+  padding: 0 0 0 10px;
+}
+body.books .card .info li.fav {
+  min-width: 0;
+  float: right;
+  padding: 5px 10px 4px 0;
+}
+body.books .card .info li.fav a {
+  color: #999;
+  text-decoration: none;
+}
+body.books .card .info li.fav a:hover {
+  color: #333;
+}
+body.books .card .info li.fav a.active {
+  color: #db8;
+}
+body.music .card {
+  width: 194px;
+  height: 260px;
+}
+body.music .card.discounted {
+  border-bottom-color: #007050;
+}
+body.music .card .discounted {
+  background: url(/img/slm.png);
+}
+body.music .card .overlay {
+  width: 194px;
+  height: 194px;
+}
+body.music .card .overlay .inner a {
+  top: 82px;
+  min-width: 50px;
+  min-height: 50px;
+}
+body.music .card .overlay .inner .zoomer {
+  left: 73px;
+}
+body.music .card .overlay .inner .caption {
+  display: none;
+}
+body.music .card .overlay .inner.rs .zoomer {
+  left: 10px;
+}
+body.music .card .overlay .inner.rs .tu {
+  left: 88px;
+}
+body.music .card .overlay .inner.rs .td {
+  left: 135px;
+}
+body.music .card.hover .overlay {
+  display: block;
+}
+body.music .card.hover .discounted {
+  display: block;
+}
+body.music .card .image {
+  width: 194px;
+  height: 194px;
+  margin: 0;
+}
+body.music .card .image div {
+  width: 194px;
+  height: 194px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+body.music .card .title {
+  font-family: 'Share Tech';
+  color: #888;
+  padding: 10px 10px;
+  font-size: 12px;
+}
+body.music .card .title .caption {
+  display: block;
+  color: #222;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+body.music .card .title .author {
+  color: #444;
+}
+body.music .card .info {
+  display: none;
+}
+body.music .card.promo {
+  width: 788px;
+  height: 524px;
+}
+body.music .card.promo .overlay {
+  display: block;
+  left: 330px;
+  top: 70px;
+}
+body.music .card.promo .image {
+  margin: 70px 0 0 40px;
+  width: 300px;
+  height: 300px;
+}
+body.music .card.promo .image div {
+  width: 300px;
+  height: 300px;
+}
+body.s.books .card {
+  margin: 0 27px 27px 0;
+}
+body.general.m .card.c3 {
+  margin-right: 20px;
+}
+body.general.m .card.c4 {
+  margin-right: 0px!important;
+}
+body.general.s .card.c3 {
+  margin-right: 0px!important;
+}
+body.general.s .card.c4 {
+  margin-right: 27px;
+}
+body.books.m .card.c4, body.music.m .card.c4 {
+  margin-right: 20px;
+}
+body.books.m .card.c5, body.music.m .card.c5 {
+  margin-right: 0px!important;
+}
+body.books.s .card.c4, body.music.s .card.c4 {
+  margin-right: 0px!important;
+}
+body.books.s .card.c5, body.music.s .card.c5 {
+  margin-right: 30px;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+  overflow-y: scroll;
+}
+.backdrop .db {
+  position: relative;
+  padding-bottom: 60px;
+}
+.modal-container {
+  z-index: 1010;
+  position: absolute;
+  background: #fff;
+  top: 60px;
+  width: 900px;
+  overflow-y: auto;
+  box-shadow: 0 0 26px -6px #666666;
+}
+.modal-container .modal {
+  position: relative;
+  background: #f0f3f7;
+}
+.modal-container .modal .modal-header {
+  position: relative;
+  background: #b22913;
+  font-family: 'Share Tech';
+  color: #fff;
+  font-size: 24px;
+  padding: 14px 160px 12px 10px;
+}
+.modal-container .modal .modal-header a {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-container .modal .modal-header a:hover {
+  text-decoration: none;
+  color: #ddd;
+}
+.modal-container .modal .modal-body {
+  padding: 0 0 10px;
+  position: relative;
+}
+.modal-container .modal .modal-body .item-wrapper {
+  position: relative;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info {
+  display: table;
+  border-spacing: 10px;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row {
+  display: table-row;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .image-container {
+  display: table-cell;
+  vertical-align: top;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .image-container .image {
+  width: 300px;
+  height: 300px;
+  background-position: center center;
+  background-size: contain;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .overview {
+  vertical-align: top;
+  display: table-cell;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 406px;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .overview p {
+  margin-bottom: 8px;
+  display: block;
+  font-size: 13px;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .overview h3 {
+  font-size: 16px;
+  color: #b22913;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .overview p + h3 {
+  margin-bottom: 12px;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .params {
+  vertical-align: top;
+  display: table-cell;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 121px;
+  margin-left: 30px;
+  text-align: right;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .params .key {
+  text-transform: uppercase;
+  color: #666;
+  font-size: 12px;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .params .value {
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .params .value.price {
+  margin-bottom: 0px;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .params .value a {
+  text-decoration: none;
+  border-bottom: 1px dotted #222;
+  color: #333;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .params .value a:hover {
+  border-bottom: 1px solid #222;
+}
+.modal-container .modal .modal-body .item-wrapper .item-info .row .params .ph {
+  height: 38px;
+}
+.modal-container .modal .modal-body .similar {
+  margin: 0 10px;
+}
+.modal-container .modal .modal-body .similar a {
+  font-family: 'Share Tech', sans-serif;
+  display: block;
+  position: relative;
+  width: 66px;
+  height: 56px;
+  padding-top: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.modal-container .modal .modal-body .similar a span {
+  display: block;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.modal-container .modal .modal-body .similar a > .ol {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 10px;
+  width: inherit;
+  height: inherit;
+  display: none;
+  background: rgba(255, 255, 255, 0.8);
+}
+.modal-container .modal .modal-body .similar a:hover > .ol {
+  display: block;
+}
+.modal-container .modal .modal-body .similar .si {
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  float: left;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.modal-container .modal .modal-body .similar .d {
+  float: left;
+  text-transform: uppercase;
+  color: #666;
+  width: 150px;
+  margin: 15px 0 0 10px;
+}
+.modal-container .modal .modal-body .similar .buy {
+  float: right;
+  background: #b22913;
+  color: #fff;
+  text-decoration: none;
+}
+.modal-container .modal .modal-body .similar .buy:hover {
+  background: #ca412b;
+}
+.modal-container .modal .modal-body .similar .buy span {
+  display: block;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.modal-container .modal .modal-body .similar .fbs {
+  float: right;
+  text-align: center;
+  margin-right: 10px;
+  background: #3b5998;
+  color: #fff;
+  text-decoration: none;
+}
+.modal-container .modal .modal-body .similar .fbs:hover {
+  background: #5371b0;
+}
+.modal-container .modal .modal-body .similar .fbs span {
+  display: block;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+body.books .modal-container .modal .modal-header {
+  background: #0090de;
+}
+body.books .modal-container .modal .modal-body .item-wrapper .item-info .row .overview h3 {
+  color: #0090de;
+}
+body.books .modal-container .modal .modal-body .similar .buy {
+  background: #0090de;
+  color: #fff;
+}
+body.books .modal-container .modal .modal-body .similar .buy:hover {
+  background: #18a8f6;
+}
+body.music .modal-container {
+  width: 840px;
+}
+body.music .modal-container .modal .modal-header {
+  display: none;
+  background: #007050;
+}
+body.music .modal-container .modal .modal-body {
+  padding: 0;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info {
+  border-spacing: 0;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .image-container .image {
+  border: none;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview {
+  width: 520px;
+  border: none;
+  margin: 20px;
+  position: relative;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview h3 {
+  color: #007050;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .title {
+  font-family: 'Share Tech';
+  font-size: 24px;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .author {
+  font-family: 'Share Tech';
+  color: #666;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .author span {
+  font-size: 18px;
+  color: #333;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .player {
+  margin: 10px 0;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .player a {
+  display: block;
+  float: left;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Share Tech';
+  font-size: 15px;
+  height: 40px;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .player a.play {
+  background: #007050;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .player a.play:hover {
+  background: #188868;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .player a.buy {
+  background: #000;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .player a.buy:hover {
+  background: #333;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .player a.fbs {
+  background: #3b5998;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .player a.fbs:hover {
+  background: #5371b0;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .player a i {
+  display: block;
+  float: left;
+  margin-left: 10px;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .player a span {
+  margin-left: 40px;
+  display: block;
+}
+body.music .modal-container .modal .modal-body .item-wrapper .item-info .row .overview .legal {
+  font-size: 12px;
+  color: #888;
+  font-style: italic;
+}
+body.music .modal-container .modal .modal-body .similar {
+  margin: 10px 0 0 0;
+}
+body.music .modal-container .modal .modal-body .similar .si {
+  border: none;
+  margin-right: 12px;
+}
+body.music .modal-container .modal .modal-body .similar .buy {
+  background: #0090de;
+  color: #fff;
+}
+body.music .modal-container .modal .modal-body .similar .buy:hover {
+  background: #18a8f6;
+}
+.content-container .content .empty {
+  text-align: center;
+  color: #444;
+  margin: 100px auto;
+  font-size: 18px;
+  text-shadow: 1px 1px 1px #fff;
+}
+.content-container .content .loader {
+  display: block;
+  width: 120px;
+  height: 90px;
+  padding-top: 30px;
+  border-radius: 60px;
+  margin: 20px auto 50px;
+  background: #bbb;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+.content-container .content .loader:hover {
+  background: #ccc;
+  /*box-shadow:  0 0 12px -8px #000;*/
+
+  /*border-color: #aaa;*/
+
+}
+.content .about {
+  background: #fff;
+  padding: 30px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+.content .about h2 {
+  font-size: 20px;
+  color: #b22913;
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+.content .about h3 {
+  font-size: 13px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 12px;
+}
+.content .about p {
+  margin-bottom: 12px;
+}
+.content .about .quote {
+  font-size: 18px;
+  margin: 18px 0 18px 0;
+  text-shadow: 0 0 1px #fff;
+}
+.content .about .main {
+  margin-right: 300px;
+}
+.content .about .stats {
+  float: right;
+  width: 250px;
+}
+.content .about .stats .gc {
+  margin-bottom: 16px;
+}
+.content .about .stats .gc .caption {
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.content .about .stats .gc .content .sqr {
+  display: block;
+  float: left;
+  width: 8px;
+  height: 8px;
+  margin: 0 2px 2px 0;
+  background-color: #b22913;
+}
+.content .about .stats .params {
+  margin-top: 40px;
+}
+.content .about .stats .params .key {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.content .about .stats .params .value {
+  font-size: 12px;
+}
+.content .about .stats .params .value a {
+  color: #222;
+  text-decoration: none;
+  border-bottom: 1px dotted #222;
+}
+.content .about .stats .params .value a:hover {
+  border-bottom: 1px solid #222;
+}
+.content .about .list {
+  list-style: square;
+  margin: 0 0 12px 15px;
+}
+.content .about .leftpane {
+  float: left;
+  width: 450px;
+  padding-right: 100px;
+}
+.content .about .leftpane form {
+  margin-top: 30px;
+}
+.content .about .leftpane form .row {
+  margin-bottom: 10px;
+}
+.content .about .leftpane form .row .label {
+  margin: 0 0 3px 11px;
+  color: #666;
+  font-size: 13px;
+}
+.content .about .leftpane form .row input, .content .about .leftpane form .row textarea {
+  border: 1px solid #ccc;
+  font-size: 14px;
+  padding: 4px 10px;
+  color: #333;
+}
+.content .about .leftpane form .row input:focus, .content .about .leftpane form .row textarea:focus {
+  border: 1px solid #888;
+  outline: none;
+}
+.content .about .leftpane form .row input {
+  width: 220px;
+}
+.content .about .leftpane form .row textarea {
+  width: 380px;
+}
+.content .about .leftpane form .btn {
+  display: inline-block;
+  background: #007050;
+  color: #fff;
+  padding: 6px 11px 7px;
+  text-decoration: none;
+}
+.content .about .leftpane form .btn:hover {
+  background: #188868;
+}
+.content .about .rightpane {
+  float: left;
+  width: 440px;
+}
+.content .about .rightpane .client-card {
+  width: 240px;
+  height: 150px;
+  background: url(/img/ce.png);
+  background-size: contain;
+  border-radius: 6px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.34);
+  margin-bottom: 30px;
+}
+.content .about .rightpane ul {
+  list-style: square;
+  margin-left: 17px;
+}
+.content .about .rightpane ul li {
+  margin-bottom: 8px;
+}
+.content .about .rightpane i {
+  font-size: 14px;
+}
+body.books .content .about h2 {
+  color: #0090de;
+}
+body.music .content .about h2 {
+  color: #007050;
+}
+.trackbar {
+  margin-bottom: 8px;
+}
+.trackbar .label-left, .trackbar .label-right {
+  font-family: 'Share Tech';
+  color: #444;
+}
+.trackbar .label-left {
+  float: left;
+}
+.trackbar .label-right {
+  float: right;
+}
+.trackbar .track-container {
+  padding-top: 2px;
+}
+.trackbar .track-container .track {
+  height: 2px;
+  margin: 5px 200px 0;
+  position: relative;
+  background: #b22913;
+}
+.trackbar .track-container .track .handler {
+  display: block;
+  position: absolute;
+  left: 49%;
+  top: -7px;
+  width: 16px;
+  height: 16px;
+  background: #ddd;
+  cursor: pointer;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.74);
+}
+.trackbar .track-container .track .handler.active, .trackbar .track-container .track .handler:hover {
+  background-color: #fff;
+}
+.trackbar .track-container .track .handler.active .inner .tooltip,
+.trackbar .track-container .track .handler:hover .inner .tooltip,
+.trackbar .track-container .track .handler.active .inner .to,
+.trackbar .track-container .track .handler:hover .inner .to,
+.trackbar .track-container .track .handler.active .inner .ti,
+.trackbar .track-container .track .handler:hover .inner .ti {
+  display: block;
+  text-wrap: none;
+}
+.trackbar .track-container .track .handler .inner {
+  position: relative;
+}
+.trackbar .track-container .track .handler .inner .tooltip {
+  position: absolute;
+  bottom: 9px;
+  left: -8px;
+  padding: 4px;
+  background: #f2f2f2;
+  display: none;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.74);
+  z-index: 22;
+}
+.trackbar .track-container .track .handler .inner .ti, .trackbar .track-container .track .handler .inner .to {
+  display: none;
+  position: absolute;
+}
+.trackbar .track-container .track .handler .inner .ti {
+  border-top: 8px solid #f2f2f2;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  z-index: 23;
+  left: 1px;
+  bottom: -6px;
+}
+.trackbar .track-container .track .handler .inner .to {
+  border-top: 9px solid #888;
+  border-bottom: 9px solid transparent;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  z-index: 20;
+  left: 0;
+  bottom: -8px;
+}
+.to-top {
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  color: #000;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  z-index: 200;
+  transition: left 300ms ease-in-out;
+}
+.to-top a {
+  font-size: 14px;
+  font-family: 'Share Tech';
+  padding: 5px 20px;
+  display: inline-block;
+}
+.to-top a:hover, .to-top a.active {
+  color: #b22913;
+}
+.to-top a i {
+  font-size: 14px;
+}
+.to-top a:first-child {
+  border-right: 1px solid #888;
+}
