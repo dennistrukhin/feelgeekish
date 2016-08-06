@@ -1,16 +1,25 @@
 package main
 
 import (
-    "log"
-    "net/http"
-    "github.com/gorilla/mux"
+	"database/sql"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/gorilla/mux"
+	"log"
+	"net/http"
 )
 
-
+var db *sql.DB
 
 func main() {
-  router := mux.NewRouter().StrictSlash(true)
-  router.HandleFunc("/filters", FiltersList)
+	var err error
+	db, err = sql.Open("mysql", "feelgeekish:U2tZhv4YLBFLteWF@tcp(127.0.0.1:3306)/feelgeekish")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
 
-  log.Fatal(http.ListenAndServe(":8090", router))
+	router := mux.NewRouter().StrictSlash(true)
+	router.HandleFunc("/filters", FiltersList)
+
+	log.Fatal(http.ListenAndServe(":8090", router))
 }

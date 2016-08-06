@@ -145,17 +145,17 @@ app = {
 				app.params.mode = 'tagged';
 				app.hash.generate();
 				app.catalog.showLoading(reload);
-				$.post('/controller/load/tagged/', {'categoryID': 0, 'options': app.params.options.join(','), 'page': app.params.page, 'query': '', 'discount': '0'}, function(response) {
-					//alert(response);
-					try {
-						app.content.buildCards(response, reload);
-						$('.content-container > .content').off('click', '.loader').on('click', '.loader', function() {
-							app.catalog.toggle.tagged(app.params.categoryID, app.params.options, false);
-						});
-					} catch(e) {
-						app.catalog.showError();
-					}
-				});
+				// $.post('/controller/load/tagged/', {'categoryID': 0, 'options': app.params.options.join(','), 'page': app.params.page, 'query': '', 'discount': '0'}, function(response) {
+				// 	//alert(response);
+				// 	try {
+				// 		app.content.buildCards(response, reload);
+				// 		$('.content-container > .content').off('click', '.loader').on('click', '.loader', function() {
+				// 			app.catalog.toggle.tagged(app.params.categoryID, app.params.options, false);
+				// 		});
+				// 	} catch(e) {
+				// 		app.catalog.showError();
+				// 	}
+				// });
 			},
 
 			fuzzy: function(reload) {
@@ -511,39 +511,6 @@ app = {
 			}
 		}(matches);
 
-		$.when(
-			$.get('/templates/filterHandler.html'),
-			$.get('/templates/filterItem.html'),
-			$.get('/templates/filterItemContainer.html')
-		).then(function(templateHandler, templateItem, templateItemContainer) {
-			$.post('/filters', function(response) {
-				var filterGroups = JSON.parse(response);
-				for (filterGroupIndex in filterGroups) {
-					if (filterGroups.hasOwnProperty(filterGroupIndex)) {
-						var filterGroup = filterGroups[filterGroupIndex];
-						var filterHandler = templateHandler[0]
-							.replace('{id}', filterGroup.id)
-							.replace('{name}', filterGroup.name)
-							.replace('{caption}', filterGroup.caption);
-						$('.controls.tagged .filters').append(filterHandler);
-						var filterItemContainer = templateItemContainer
-							.replace('{id}', filterGroup.id);
-						$('.controls.tagged .filters-container').append(filterHandler);
-						for (filterIndex in filterGroup.content) {
-							if (filterGroup.content.hasOwnProperty(filterIndex)) {
-								var item = filterGroup.content[filterIndex];
-								var filterItem = templateItem[0]
-									.replace('{id}', item.id)
-									.replace('{name}', item.name)
-								$('.controls.tagged .filters-container .filter' + filterGroup.id + ' .content').append(filterItem);
-							}
-						}
-
-					}
-				}
-			});
-		});
-
 		// ASSIGN TOOLS
 		$('.tools .tagged').on('click', function() {
 			app.catalog.toggle.tagged(0, [], true);
@@ -568,7 +535,7 @@ app = {
 
 
 		//ASSIGN FILTERS
-		$('.controls.tagged .filters a').on('click', function() {
+		$(document).on('click', '.controls.tagged .filters a', function() {
 			app.ui.filters.toggle($(this).attr('data-filter'));
 		})
 

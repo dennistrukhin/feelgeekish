@@ -1,3 +1,5 @@
+// "out": true
+
 @accentColor: #b22913;
 @secondaryColor: #007050;
 
@@ -6,18 +8,18 @@
 
 @borderMain: 1px solid #efefef;
 
-@font-face {
-  font-family: 'Maven Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Maven Pro Regular'), local('MavenProRegular'), url(/css/fonts/MG9KbUZFchDs94Tbv9U-pT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-@font-face {
-  font-family: 'Share Tech';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Share Tech'), local('ShareTech-Regular'), url(/css/fonts/sharetech.woff) format('woff');
-}
+// @font-face {
+//   font-family: 'Maven Pro';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local('Maven Pro Regular'), local('MavenProRegular'), url(/css/fonts/MG9KbUZFchDs94Tbv9U-pT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+// }
+// @font-face {
+//   font-family: 'Share Tech';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local('Share Tech'), local('ShareTech-Regular'), url(/css/fonts/sharetech.woff) format('woff');
+// }
 * {
 	margin: 0;
 	padding: 0;
@@ -109,7 +111,7 @@ body {
 						.d {
 							font-size: 13px;
 							color: #444;
-							margin-bottom: 5px; 
+							margin-bottom: 5px;
 						}
 						a {
 							font-size: 13px;
@@ -274,13 +276,13 @@ body.music{
 	border-bottom: @borderMain;
 }
 body {
-	.header-container > .header, .content-container > .content, .footer-container > .footer, .controls-container > .controls, .filters-container > .filter, .filters-container > .selected {
+	.header-container > .header, .content-container > .content, .footer-container > .footer, .controls-container > .controls, .filters-container > div >.filter, .filters-container > .selected {
 		width: 1060px;
 		margin: 0 auto;
 	}
 }
 body.s {
-	.header-container > .header, .content-container > .content, .footer-container > .footer, .dropdowns-container > .dropdowns, .filters-container > .filter, .filters-container > .selected {
+	.header-container > .header, .content-container > .content, .footer-container > .footer, .dropdowns-container > .dropdowns, .filters-container > div > .filter, .filters-container > .selected {
 		width: 870px;
 		margin: 0 auto;
 	}
@@ -661,12 +663,12 @@ body.music {
 
 
 body.books {
-	.filters-container > .filter > .content > .option:hover, .filters-container > .filter > .content > .option.active, .filters-container > .selected .option:hover {
+	.filters-container > div > .filter > .content > .option:hover, .filters-container > div >.filter > .content > .option.active, .filters-container > .selected .option:hover {
 		background: @accentColorBooks;
 	}
 }
 body.music {
-	.filters-container > .filter > .content > .option:hover, .filters-container > .filter > .content > .option.active, .filters-container > .selected .option:hover {
+	.filters-container > div > .filter > .content > .option:hover, .filters-container > div > .filter > .content > .option.active, .filters-container > .selected .option:hover {
 		background: @accentColorMusic;
 	}
 }
@@ -843,9 +845,9 @@ body.music {
 					}
 				}
 			}
-			
+
 		}
-		
+
 		&.promo {
 			width: 788px;
 			height: 524px;
@@ -1014,7 +1016,7 @@ body.books {
 					}
 				}
 			}
-			
+
 		}
 	}
 }
@@ -1095,7 +1097,7 @@ body.music {
 		.info {
 			display: none;
 		}
-		
+
 		&.promo {
 			width: 788px;
 			height: 524px;
@@ -1351,7 +1353,7 @@ body.books, body.music {
 						text-transform: uppercase;
 					}
 				}
-				
+
 				.fbs {
 					float: right;
 					text-align: center;
