@@ -3,7 +3,7 @@ var FilterHandler = React.createClass({
     return (
       <li className={"filter" + this.props.data.id}>
         <a href='javascript:void(0)' data-filter={this.props.data.id}>
-          <span className='c'>{this.props.data.name}</span>
+          <span className='c'>{this.props.data.name}</span>&nbsp;
           <i className='icon-caret-down'></i>
           <i className='icon-caret-up'></i>
           <span className='d'>{this.props.data.caption}</span>
@@ -29,11 +29,19 @@ var FilterHandlerList = React.createClass({
 });
 
 var Filter = React.createClass({
+  getInitialState: function() {
+    return {active: false}
+  },
+  clicked: function(filterId) {
+    this.state = {active: true}
+  },
   render: function() {
+    var activeClassName = this.state.active ? 'active' : '';
     return (
-      <a className={'option option' + this.props.filter.id}
+      <a className={'option option ' + activeClassName + this.props.filter.id}
         data-id={this.props.filter.id}
-        href='javascript:void(0)'>{this.props.filter.name}</a>
+        href='javascript:void(0)'
+        onClick={this.clicked.bind(this, this.props.filter.id)}>{this.props.filter.name}</a>
     );
   }
 });
@@ -70,7 +78,7 @@ var FilterGroupList = React.createClass({
   }
 })
 
-$.get('/filters', function(response) {
+$.get('/dept/general/filters', function(response) {
   var filters = JSON.parse(response);
   ReactDOM.render(
     <FilterHandlerList filters={filters} />,

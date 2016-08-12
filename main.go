@@ -19,7 +19,7 @@ func main() {
 	defer db.Close()
 
 	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/filters", FiltersList)
+	router.HandleFunc("/dept/{deptId}/filters", FiltersList)
 
 	log.Fatal(http.ListenAndServe(":8090", router))
 }
